@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="mqtt.MainPage">
+
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <maps:Map x:Name="map" IsShowingUser="True" Grid.Row="0">
+                <x:Arguments>
+                    <maps:MapSpan>
+                        <x:Arguments>
+                            <maps:Position>
+                                <x:Arguments>
+                                    <x:Double>24.13333</x:Double>
+                                    <x:Double>120.68333</x:Double>
+                                </x:Arguments>
+                            </maps:Position>
+                            <x:Double>0.01</x:Double>
+                            <x:Double>0.01</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
+            </maps:Map>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Reset"  HorizontalOptions="Center" TextColor="Red" FontSize="25" Grid.Row="0" Grid.ColumnSpan="3"></Label>
+                <Button Clicked="reset" x:Name="re1" Text="self " Grid.Row="1" Grid.Column="0"></Button>
+                <Button Clicked="reset" x:Name="re2" Text="user1 " Grid.Row="1" Grid.Column="1"></Button>
+                <Button Clicked="reset" x:Name="re3" Text="user2" Grid.Row="1" Grid.Column="2"></Button>
+            </Grid>
+            <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            <Label Text="Distance" HorizontalOptions="Center" TextColor="Black" FontSize="25" Grid.Row="0" Grid.ColumnSpan="3"></Label>
+            <Label Text="0m" x:Name="mqtt1"  FontSize="30" Grid.Row="1" Grid.Column="0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="MQTT2" x:Name="mqtt2" FontSize="30" Grid.Row="1" Grid.Column="1">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="MQTT3" x:Name="mqtt3" FontSize="30" Grid.Row="1" Grid.Column="2">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            </Grid>
+        </Grid>
+        
+        
+
+
+</ContentPage>
