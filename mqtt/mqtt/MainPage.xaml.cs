@@ -130,10 +130,17 @@ namespace mqtt
             }
             catch (Exception ex)
             {
-                MainThread.BeginInvokeOnMainThread(() =>
-                {
-                    mqtt2.Text = str;
-                });
+                //MainThread.BeginInvokeOnMainThread(() =>
+                //{
+                //    if (e.Topic == topic1)
+                //    {
+                //        mqtt2.Text = str;
+                //    }
+                //    else if (e.Topic == topic2)
+                //    {
+                //        mqtt3.Text = str;
+                //    }
+                //});
             }
             //double lat = Convert.ToDouble(loc[0]);
             //double lon = Convert.ToDouble(loc[1]);
@@ -163,11 +170,11 @@ namespace mqtt
                 distance += DistanceOfTwoPoints(geopath[i].Latitude, geopath[i].Longitude, geopath[i + 1].Latitude, geopath[i + 1].Longitude);
             }
             if (topic == topic1) 
-                mqtt2.Text = distance.ToString() + " m";
+                mqtt2.Text = distance.ToString() + " km";
             else if (topic == topic2)
-                mqtt3.Text = distance.ToString() + " m";
+                mqtt3.Text = distance.ToString() + " km";
             else if (topic == "self")
-                mqtt1.Text = distance.ToString() + " m";
+                mqtt1.Text = distance.ToString() + " km";
         }
 
         private void AddLine(Xamarin.Forms.Maps.Position position, string topic)
@@ -256,7 +263,7 @@ namespace mqtt
                     DesiredAccuracy = GeolocationAccuracy.Best,
                     Timeout = TimeSpan.FromSeconds(30)
                 });
-                Xamarin.Forms.Maps.Position loc = new Xamarin.Forms.Maps.Position(location.Latitude, location.Longitude);
+                Position loc = new Position(location.Latitude, location.Longitude);
                 if (lastPosition != loc)
                 {
                     // 添加新的位置到 Polyline
@@ -332,12 +339,12 @@ namespace mqtt
             {
                 // clear polyline
                 user1.Geopath.Clear();
-                mqtt2.Text = "0m";
+                mqtt2.Text = "0km";
             }
             else if (clickedButton == re3)
             {
                 user2.Geopath.Clear();
-                mqtt3.Text =  "0m";
+                mqtt3.Text =  "0km";
                 // clear polyline
 
             }

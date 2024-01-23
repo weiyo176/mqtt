@@ -53,17 +53,17 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
             <Label Text="Distance" HorizontalOptions="Center" TextColor="Black" FontSize="25" Grid.Row="0" Grid.ColumnSpan="3"></Label>
-            <Label Text="0m" x:Name="mqtt1"  FontSize="30" Grid.Row="1" Grid.Column="0">
+            <Label Text="0km" x:Name="mqtt1"  FontSize="30" Grid.Row="1" Grid.Column="0">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnLabelTapped" />
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="MQTT2" x:Name="mqtt2" FontSize="30" Grid.Row="1" Grid.Column="1">
+            <Label Text="0km" x:Name="mqtt2" FontSize="30" Grid.Row="1" Grid.Column="1">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnLabelTapped" />
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="MQTT3" x:Name="mqtt3" FontSize="30" Grid.Row="1" Grid.Column="2">
+            <Label Text="0km" x:Name="mqtt3" FontSize="30" Grid.Row="1" Grid.Column="2">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnLabelTapped" />
                 </Label.GestureRecognizers>
